@@ -22,18 +22,17 @@ else
 		requirements;
 	else
 		USED_MEMORY=$( free | grep Mem: | awk '{ print $3*100/$2 }')
-		echo ${USED_MEMORY}
 		USED=${USED_MEMORY/.*}
 	fi
 fi
 
 if [ ${USED} -ge ${CRITICAL} ]; then
-	echo "2"
+	echo 2
 	exit
 elif [ ${USED} -ge ${WARNING} ]; then
-	echo "1"
+	echo 1
 	exit
 elif [ ${USED} -lt ${WARNING} ]; then
-	echo "0"
+	echo 0
 	exit
 fi
