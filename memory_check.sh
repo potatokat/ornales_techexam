@@ -27,12 +27,9 @@ else
 fi
 
 if [ ${USED} -ge ${CRITICAL} ]; then
-	echo 2
-	exit
+	exit 2
 elif [ ${USED} -ge ${WARNING} ]; then
-	echo 1
-	exit
+	exit 1
 elif [ ${USED} -lt ${WARNING} ]; then
-	echo 0
-	exit
+	exit 0
 fi
