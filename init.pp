@@ -13,7 +13,7 @@ class ornales {
   }
 
   user { 'monitor':
-    ensure: => present,
+    ensure => present,
     home => '/home/monitor',
     shell => '/bin/bash'
   }
